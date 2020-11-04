@@ -1,0 +1,56 @@
+{
+  "name": "jenius-api",
+  "version": "1.0.0",
+  "description": "Unofficial Jenius BTPN API.",
+  "main": "index.js",
+  "scripts": {
+    "dev:build": "tsc -w",
+    "dev:run": "nodemon --ignore 'dist/sessions/*.json' dist/index.js",
+    "dev": "concurrently npm:dev:*",
+    "start": "tsc && node dist/index.js",
+    "lint": "eslint --fix .",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.8",
+    "@types/puppeteer": "^5.4.0",
+    "@types/uuid": "^8.3.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "express": "^4.17.1",
+    "puppeteer": "^5.4.1",
+    "reflect-metadata": "^0.1.13",
+    "source-map-support": "^0.5.19"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "eslint": "^7.12.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "prettier": "^2.1.2",
+    "prettier-eslint": "^11.0.0"
+  }
+}
